@@ -142,6 +142,8 @@ screen say(who, what):
                 background Image("gui/textbox/message_a1.png", xalign=0.5, yalign=1.0)
             elif(who == "   "):
                 background Image("gui/textbox/message_b1.png", xalign=0.5, yalign=1.0)
+            elif(who == "    "):
+                background Image("gui/textbox/message_f2.png", xalign=0.5, yalign=1.0)
             elif(who == "？？"):
                 background Image("gui/textbox/message_b.png", xalign=0.5, yalign=1.0)
             elif(who == "？？ "):
@@ -168,6 +170,10 @@ screen say(who, what):
         text what id "what"
 
 
+    ## 如果有对话框头像，会将其显示在文本之上。请不要在手机界面下显示这个，因为
+    ## 没有空间。
+    if not renpy.variant("small"):
+        add SideImage() xalign 0.0 yalign 1.0
 
 
 ## 通过 Character 对象使名称框可用于样式化。
@@ -370,7 +376,8 @@ style quick_button_text:
 ## 导航界面 ########################################################################
 ##
 ## 该界面包含在标题菜单和游戏菜单中，并提供导航到其他菜单，以及启动游戏。
-
+label before_main_menu:
+    $ renpy.movie_cutscene("beforemenu.webm")
 # TODO: Scale imagebuttons
 screen navigation():
 
@@ -388,7 +395,10 @@ screen navigation():
                 idle "gui/button/start_1.png"
                 hover "gui/button/start_2.png"
                 action Start()
-
+            #imagebutton:
+                #idle "gui/button/start_1.png"
+                #hover "gui/button/start_2.png"
+                #action Start("dlc")
         else:
             imagebutton:
                 idle "gui/button/history_1.png"
@@ -444,13 +454,10 @@ screen navigation():
                 hover "gui/button/title_2.png"
                 action MainMenu()
 
-        if renpy.variant("pc"):
-            ## “退出”按钮在 iOS 上被禁止设置，在安卓和网页上也不是必需的。
-            # textbutton _("退出") action Quit(confirm=not main_menu)
-            imagebutton:
-                idle "gui/button/exit_1.png"
-                hover "gui/button/exit_2.png"
-                action Quit(confirm=not main_menu)
+        imagebutton:
+            idle "gui/button/exit_1.png"
+            hover "gui/button/exit_2.png"
+            action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -702,7 +709,7 @@ screen save():
 
     tag menu
 
-    add Image("images/bg/stg1.png", xpos=0, ypos=0)
+    add Image("images/bg/stg1.webp", xpos=0, ypos=0)
     imagebutton:
         idle "gui/button/back_3.png"
         hover "gui/button/back_4.png"
@@ -717,7 +724,7 @@ screen load():
 
     tag menu
 
-    add Image("images/bg/stg1.png", xpos=0, ypos=0)
+    add Image("images/bg/stg1.webp", xpos=0, ypos=0)
     imagebutton:
         idle "gui/button/back_3.png"
         hover "gui/button/back_4.png"
@@ -1386,4 +1393,3 @@ style notify_text:
 ################################################################################
 ## 移动设备界面
 ################################################################################
-
