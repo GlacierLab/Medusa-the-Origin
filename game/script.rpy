@@ -2,49 +2,49 @@
 ## image语句:[url=https://www.renpy.cn/doc/quickstart.html?highlight=image#image]https://www.renpy.cn/doc/quickstart.html?highlight=image#image[/url]
 ## 注意文件格式 png 与 jpg
 image af-1 :
-    "images/cg/af.png"
+    "images/cg/af.webp"
     size (1920 ,1080) ## 原图尺寸：1920*1080，改为：1280*720
 
 image bf-1 :
-    "images/cg/bf.png"
+    "images/cg/bf.webp"
     size (1920 ,1080)
 
 image cf-1:
-    "images/cg/cf.png"
+    "images/cg/cf.webp"
     size (1920 ,1080)
 
 image df-1 :
-    "images/cg/df.png"
+    "images/cg/df.webp"
     size (1920 ,1080)
 image ef-1 :
-    "images/cg/ef2.png"
+    "images/cg/ef2.webp"
     size (1920 ,1080) ## 原图尺寸：1920*1080，改为：1280*720
 image rem-1 :
-    "images/cg/rem3.png"
+    "images/cg/rem3.webp"
     size (1920 ,1080)
 
 image end1-1 :
-    "images/cg/end1.png"
+    "images/cg/end1.webp"
     size (1920 ,1080)
 
 image end2-1:
-    "images/cg/end2.png"
+    "images/cg/end2.webp"
     size (1920 ,1080)
 image fin-1:
-    "images/cg/final.png"
+    "images/cg/final.webp"
     size (1920 ,1080)
-image af-1-p = "images/cg/afl.png"
-image bf-1-p = "images/cg/bfl.png"
-image cf-1-p = "images/cg/cfl.png"
-image df-1-p = "images/cg/dfl.png"
-image ef-1-p = "images/cg/efl.png"
-image rem-1-p = "images/cg/reml.png"
-image end1-1-p = "images/cg/end1l.png"
-image end2-1-p = "images/cg/end2l.png"
-image fin-1-p = "images/cg/finall.png"
+image af-1-p = "images/cg/afl.webp"
+image bf-1-p = "images/cg/bfl.webp"
+image cf-1-p = "images/cg/cfl.webp"
+image df-1-p = "images/cg/dfl.webp"
+image ef-1-p = "images/cg/efl.webp"
+image rem-1-p = "images/cg/reml.webp"
+image end1-1-p = "images/cg/end1l.webp"
+image end2-1-p = "images/cg/end2l.webp"
+image fin-1-p = "images/cg/finall.webp"
 ## 定义 未解锁缩略图
 image locked :
-    "images/cg/locked.png"
+    "images/cg/locked.webp"
     size (270 ,150) # 调整原图尺寸。
 
 init python:
@@ -96,7 +96,7 @@ screen gallery:
     tag menu
 
 ## 背景图。
-    add "images/cg/hualang.png"
+    add "images/cg/hualang.webp"
 
 ## 创建 vbox布局参考。具体参考文档：[url=https://www.renpy.cn/doc/displayables.html?highlight=vbox#VBox]https://www.renpy.cn/doc/displayables.html?highlight=vbox#VBox[/url]
     vbox: # 框体内成员布局顺序从上到下。
@@ -108,7 +108,7 @@ screen gallery:
 ## 关于make_button，参考中文文档：[url=https://www.renpy.cn/doc/rooms.html?highlight=make_button#Gallery.make_button]https://www.renpy.cn/doc/rooms.h ... Gallery.make_button[/url]
         hbox: # 框体内成员布局顺序从左到右，与vbox相反，都是用来结构布局。
             spacing 165
-            add g_cg.make_button("af-1", "af-1-p", xalign=0.5, yalign=0.5) # "1-1_p.png"是"1-1_cg"缩略图。
+            add g_cg.make_button("af-1", "af-1-p", xalign=0.5, yalign=0.5) # "1-1_p.webp"是"1-1_cg"缩略图。
             add g_cg.make_button("bf-1", "bf-1-p", xalign=0.5, yalign=0.5)
             add g_cg.make_button("cf-1", "cf-1-p", xalign=0.5, yalign=0.5)
         hbox:
@@ -167,6 +167,7 @@ define k1 = Character("■■")
 define u = Character(" ")
 define u1 = Character("  ")
 define u2 = Character("   ")
+define u3 = Character("    ")
 define z = Character("众人")
 define fadehold = Fade(0.5, 1.0, 0.5)
 define fadeholdd = Fade(0.5, 2.0, 0.5)
@@ -181,7 +182,7 @@ label start:
     # 显示角色立绘。此处使用了占位图，但您也可以在图片目录添加命名为
     # "eileen happy.png"的文件来将其替换掉。
 
-    u """
+    u3 """
     遥远的世界、遥远的时间之外，我试图找到第三种色彩。
 
     哪怕伤痕累累也没有办法，这是唯一的选择。
@@ -209,14 +210,14 @@ label start:
     为什么、选择的是她们？
     """
     show xinyu with dissolve
-    u "我曾严厉地质问■■。"
-    u "■■却不予回答。"
-    u "她是个恶劣的灵体，我不想提起她的名字。"
-    u "不过，对于如今的我，这也不再重要。"
-    u "我已成为，被放逐的■。"
-    u "……"
-    u "对了，我仍与人类有一个约定，但是不确信，她是否也记得。"
-    u "只是，她现在如此闪耀，我或许已不该打扰她。"
+    u3 "我曾严厉地质问■■。"
+    u3 "■■却不予回答。"
+    u3 "她是个恶劣的灵体，我不想提起她的名字。"
+    u3 "不过，对于如今的我，这也不再重要。"
+    u3 "我已成为，被放逐的■。"
+    u3 "……"
+    u3 "对了，我仍与人类有一个约定，但是不确信，她是否也记得。"
+    u3 "只是，她现在如此闪耀，我或许已不该打扰她。"
     play music "audio/01.二千嬢.ogg" fadeout 3.0 fadein 3.0
     scene bg3 with fadehold
     u2 """
@@ -1020,12 +1021,12 @@ label start:
     show a21 with dissolve
     a1"有时也会厌烦逆来顺受的自己……"
     scene sta2 with fadehold
-    u "是这首歌……"
+    u3 "是这首歌……"
     hide a21 with fade
     show a51
     a"请来一束追光，照亮这海底……"
     hide a51 with fade
-    u "你……为的是那个约定吗？向晚……"
+    u3 "你……为的是那个约定吗？向晚……"
     show a11 with fadehold
     play music "audio/第四约定.ogg" fadeout 1.0 fadein 1.0
     a"谢谢大家的陪伴，今天的生日过得很开心！"
@@ -1037,7 +1038,7 @@ label start:
     a"晚安啦！"
     hide a141
     scene oce2 with fadehold
-    u "必须这样……结果如何，我不知道，我只能尽我所能……晚晚……你会允许我这样称呼你吗？"
+    u3 "必须这样……结果如何，我不知道，我只能尽我所能……晚晚……你会允许我这样称呼你吗？"
 
     play music "audio/01.二千嬢.ogg" fadeout 3.0 fadein 3.0
     scene res with fadehold
@@ -3858,7 +3859,7 @@ label four:
     hide b3 with dissolve
     u2"……"
     u2"吃过饭后，晚晚好像真的累了，向我们告别后就回到了自己的房间。"
-    u2"我收拾得比较慢，最后，休息室中只剩下我和然然。"
+    u2"我收拾得比较慢，最后，餐厅中只剩下我和然然。"
     show d41 with dissolve
     d2"拉姐，那个……其实我有话想和你说。"
     hide d41
@@ -6358,7 +6359,7 @@ label seven:
     f"我定义她的剑术天赋到达顶峰。但是，我不确定这种天赋的变化，会不会真的足够有效，所以，我用了一个晚上来为她祈愿。"
     hide f92
     show b10
-    b"像谁祈愿呢？你就是神呀。"
+    b"向谁祈愿呢？你就是神呀。"
     hide b10
     show f22
     f"向我自己。到最后，甚至我自己也相信了她有着独一无二的剑术天赋。"
@@ -7736,6 +7737,9 @@ label eleven:
     image anim video_player = "web/video_player.png"
     scene anim video_player
     $ renpy.pause(6000)
-#    $ renpy.movie_cutscene("images/list.webm")
+ #   $ renpy.movie_cutscene("images/list.webm")
     scene black with fadeholdd
+    return
+label dlc:
+    u1"111"
     return
