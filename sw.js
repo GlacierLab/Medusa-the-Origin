@@ -1,8 +1,11 @@
 ﻿var APP_PREFIX = '原灵深海遗梦'
-var VERSION = '20220330'
-var VERSION_AZUSA_PATCH_USE = 'Force'
+var VERSION = '20220402'
+var VERSION_AZUSA_PATCH_USE = '20220330'
 var AZUSA_PATCH_SKIP_LIST = [
-    'https://qinlili.bid/jslib/Bella.js'
+    'https://qinlili.bid/jslib/Bella.js',
+    'index.wasm',
+    'pythonhome.data',
+    'pyapp.data'
 ]
 var CACHE_NAME = APP_PREFIX + VERSION
 var AZUSA_CACHE = APP_PREFIX + VERSION_AZUSA_PATCH_USE

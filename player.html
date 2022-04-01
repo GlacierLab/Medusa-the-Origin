@@ -42,6 +42,9 @@
 <body>
     <video id="player" autoplay preload controls></video>
     <script>
+        if (document.location.search.indexOf("logo") >= 0) {
+            document.querySelector("#player").muted = true;
+        }
         document.querySelector("#player").src = document.location.search.substr(1);
     </script>
 </body>
